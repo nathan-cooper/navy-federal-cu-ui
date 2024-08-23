@@ -53,7 +53,7 @@ export interface DevCenterCardProps {
     link: string;
 }
 
-const DevCenterCard = ({ title, description, link }: DevCenterCardProps) => {
+const DevCenterCard = ({ title, description }: DevCenterCardProps) => {
     return (
         <CardContainer>
             <div>

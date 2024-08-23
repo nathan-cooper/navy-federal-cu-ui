@@ -1,6 +1,4 @@
 import { Box, Typography, styled } from "@mui/material";
-import { styles } from "../constants/style.constants";
-
 
 const CardContainer = styled(Box)({
     width: "100%",
