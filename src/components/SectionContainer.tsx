@@ -10,7 +10,7 @@ const SectionInnerContainer = styled(Box)({
     width: "100%",
     maxWidth: "1200px",
     margin: "0 auto",
-    boxSizing: "border-box",
+    boxSizing: "border-box"
 });
 
 interface SectionContainerProps {

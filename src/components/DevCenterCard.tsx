@@ -3,8 +3,7 @@ import { styles } from "../constants/style.constants";
 
 
 const CardContainer = styled(Box)({
-    width: "270px",
-    height: "250px",
+    height: "20rem",
     backgroundColor: styles.blue,
     borderRadius: "12px",
     boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
@@ -26,7 +25,8 @@ const CardTitleText = styled(Typography)({
 const CardDescriptionText = styled(Typography)({
     fontSize: "1rem",
     color: "white",
-    textAlign: "left"
+    textAlign: "left",
+    marginBottom: "2rem"
 });
 
 const CardDivider = styled(Box)({

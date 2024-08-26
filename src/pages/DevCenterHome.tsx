@@ -26,24 +26,33 @@ const VContainer = styled(Box)({
     gap: "1rem"
 });
 
-const DevCenterHeading = styled(Typography)({
+const DevCenterHeading = styled(Typography)(({theme})=>({
     fontSize: "3rem",
     color: "white",
     fontWeight: "bold",
-    textAlign: "left"
-});
+    textAlign: "left",
+    [theme.breakpoints.down("lg")]: {
+        fontSize: "2rem"
+    }
+}));
 
-const DevCenterSubHeading = styled(Typography)({
+const DevCenterSubHeading = styled(Typography)(({theme})=>({
     fontSize: "2rem",
     color: "black",
     fontWeight: "bold",
     textAlign: "center",
-    margin: "3rem 0"
-})
+    margin: "3rem 0",
+    [theme.breakpoints.down("lg")]: {
+        fontSize: "1.5rem"
+    }
+}))
 
-const HeroImg = styled("img")({
+const HeroImg = styled("img")(({theme})=>({
     width: "100%",
-});
+    [theme.breakpoints.down("lg")]: {
+        maxWidth: "30rem"
+    }
+}));
 
 const DevCenterButton = styled("button")({
     backgroundColor: styles.orange,
@@ -79,9 +88,9 @@ const DevCenterHome = () => {
                 </HContainer>
             </SectionContainer>
             <SectionContainer color={styles.lightBlue}>
-                <Grid container sx={{ margin: "3rem" }}>
+                <Grid container sx={{ margin: "3rem 0", boxSizing: "border-box", justifyContent: "center" }} columnSpacing={"1rem"} rowSpacing={"1rem"}>
                     {DEV_CENTER_CARD_DATA.map((c, i) => (
-                        <Grid item key={i} xs={3} >
+                        <Grid item key={i} xs={4} lg={3}>
                             <DevCenterCard
                                 title={c.title}
                                 description={c.description}
