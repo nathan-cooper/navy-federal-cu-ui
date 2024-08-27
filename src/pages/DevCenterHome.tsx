@@ -1,9 +1,9 @@
-import { Card, PageContainer, Tile } from "ncooper-ui";
+import { Card, Tile, styles } from "ncooper-ui";
 import { Box, Grid, Typography, styled } from "@mui/material";
 import heroImg from "../assets/hero_graphic_1.png";
-import { styles } from "../constants/style.constants";
 import { DEV_CENTER_CARD_DATA, DEV_CENTER_TILE_DATA } from "../constants/devCenterHome.constants";
 import SectionContainer from "../components/SectionContainer";
+import { useNavigate } from "react-router-dom";
 
 const HContainer = styled(Box)({
     width: "100%",
@@ -74,13 +74,15 @@ const GetStartedButton = styled("button")({
 });
 
 const DevCenterHome = () => {
+    const navigate = useNavigate();
+
     return (
-        <PageContainer>
+        <>
             <SectionContainer color={styles.blue}>
                 <HContainer sx={{ marginTop: "5rem" }}>
                     <VContainer>
                         <DevCenterHeading>Assisting developers in crafting cutting-edge digital experiences</DevCenterHeading>
-                        <DevCenterButton>GET STARTED</DevCenterButton>
+                        <DevCenterButton onClick={() => navigate("/get-started")}>GET STARTED</DevCenterButton>
                     </VContainer>
                     <HeroImg src={heroImg} />
                 </HContainer>
@@ -111,9 +113,9 @@ const DevCenterHome = () => {
                         </Grid>
                     ))}
                 </Grid>
-                <GetStartedButton>GET STARTED</GetStartedButton>
+                <GetStartedButton onClick={() => navigate("/get-started")}>GET STARTED</GetStartedButton>
             </SectionContainer>
-        </PageContainer>
+        </>
     )
 }
 
