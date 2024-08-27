@@ -1,11 +1,9 @@
+import { Card, PageContainer, Tile } from "ncooper-ui";
 import { Box, Grid, Typography, styled } from "@mui/material";
-import PageContainer from "../components/PageContainer";
 import heroImg from "../assets/hero_graphic_1.png";
 import { styles } from "../constants/style.constants";
-import DevCenterCard from "../components/DevCenterCard";
 import { DEV_CENTER_CARD_DATA, DEV_CENTER_TILE_DATA } from "../constants/devCenterHome.constants";
 import SectionContainer from "../components/SectionContainer";
-import DevCenterTile from "../components/DevCenterTile";
 
 const HContainer = styled(Box)({
     width: "100%",
@@ -91,7 +89,7 @@ const DevCenterHome = () => {
                 <Grid container sx={{ margin: "3rem 0", boxSizing: "border-box", justifyContent: "center" }} columnSpacing={"1rem"} rowSpacing={"1rem"}>
                     {DEV_CENTER_CARD_DATA.map((c, i) => (
                         <Grid item key={i} xs={4} lg={3}>
-                            <DevCenterCard
+                            <Card
                                 title={c.title}
                                 description={c.description}
                                 link={c.link}
@@ -105,7 +103,7 @@ const DevCenterHome = () => {
                 <Grid container rowGap={5} columnSpacing={3} sx={{ margin: "2rem" }}>
                     {DEV_CENTER_TILE_DATA.map((t, i) => (
                         <Grid item key={i} xs={4} >
-                            <DevCenterTile
+                            <Tile
                                 title={t.title}
                                 description={t.description}
                                 icon={t.icon}

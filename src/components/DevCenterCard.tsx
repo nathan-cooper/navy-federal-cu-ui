@@ -2,8 +2,8 @@ import { Box, Typography, styled } from "@mui/material";
 import { styles } from "../constants/style.constants";
 
 
-const CardContainer = styled(Box)({
-    height: "20rem",
+const CardContainer = styled(Box)(({theme})=>({
+    height: "100%",
     backgroundColor: styles.blue,
     borderRadius: "12px",
     boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
@@ -12,8 +12,11 @@ const CardContainer = styled(Box)({
     display: "flex",
     flexDirection: "column",
     justifyContent: "space-between",
-    alignItems: "flex-start"
-});
+    alignItems: "flex-start",
+    [theme.breakpoints.down("lg")]: {
+        height: "19rem"
+    }
+}));
 
 const CardTitleText = styled(Typography)({
     fontSize: "1.6rem",
@@ -26,7 +29,7 @@ const CardDescriptionText = styled(Typography)({
     fontSize: "1rem",
     color: "white",
     textAlign: "left",
-    marginBottom: "2rem"
+    marginBottom: "0.5rem"
 });
 
 const CardDivider = styled(Box)({
@@ -34,7 +37,7 @@ const CardDivider = styled(Box)({
     height: "0.4rem",
     backgroundColor: styles.orange,
     borderRadius: "8px",
-    marginBottom: "1rem"
+    marginBottom: "1.5rem"
 });
 
 const CardButton = styled("button")({
