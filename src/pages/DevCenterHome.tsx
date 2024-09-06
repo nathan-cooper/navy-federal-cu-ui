@@ -4,6 +4,7 @@ import heroImg from "../assets/hero_graphic_1.png";
 import { DEV_CENTER_CARD_DATA, DEV_CENTER_TILE_DATA } from "../constants/devCenterHome.constants";
 import SectionContainer from "../components/SectionContainer";
 import { useNavigate } from "react-router-dom";
+import { DEV_CENTER_URLS } from "../constants/url.constants";
 
 const HContainer = styled(Box)({
     width: "100%",
@@ -70,7 +71,8 @@ const GetStartedButton = styled("button")({
     border: "none",
     cursor: "pointer",
     fontSize: "0.75rem",
-    margin: "3rem 0 5rem 0"
+    margin: "3rem 0 5rem 0",
+    width: "fit-content"
 });
 
 const DevCenterHome = () => {
@@ -82,7 +84,7 @@ const DevCenterHome = () => {
                 <HContainer sx={{ marginTop: "5rem" }}>
                     <VContainer>
                         <DevCenterHeading>Assisting developers in crafting cutting-edge digital experiences</DevCenterHeading>
-                        <DevCenterButton onClick={() => navigate("/get-started")}>GET STARTED</DevCenterButton>
+                        <DevCenterButton onClick={() => navigate(DEV_CENTER_URLS.NFCU_OFFERINGS)}>GET STARTED</DevCenterButton>
                     </VContainer>
                     <HeroImg src={heroImg} />
                 </HContainer>
@@ -100,7 +102,7 @@ const DevCenterHome = () => {
                     ))}
                 </Grid>
             </SectionContainer>
-            <SectionContainer color="white" innerProps={{ sx: { padding: "0 6rem" }}}>
+            <SectionContainer color="white" padding="0 6rem">
                 <DevCenterSubHeading>Why you should use our API for <br /> your financial service</DevCenterSubHeading>
                 <Grid container rowGap={5} columnSpacing={3} sx={{ margin: "2rem" }}>
                     {DEV_CENTER_TILE_DATA.map((t, i) => (
@@ -113,7 +115,7 @@ const DevCenterHome = () => {
                         </Grid>
                     ))}
                 </Grid>
-                <GetStartedButton onClick={() => navigate("/get-started")}>GET STARTED</GetStartedButton>
+                <GetStartedButton onClick={() => navigate(DEV_CENTER_URLS.NFCU_OFFERINGS)}>GET STARTED</GetStartedButton>
             </SectionContainer>
         </>
     )
